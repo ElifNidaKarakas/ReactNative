@@ -8,6 +8,7 @@ import CoursesInformation from './src/screens/CoursesInformation';
 import CounterScreen from './src/screens/CounterScreen';
 import BoxScreen from './src/screens/BoxScreen';
 import ColorChangeScreen from './src/screens/ColorChangeScreen.js';
+import PasswordScreen from './src/screens/PasswordScreen.js';
 
 
 const Stack= createNativeStackNavigator();
@@ -21,6 +22,7 @@ export default function App() {
         <Stack.Screen name="Sayac" component={CounterScreen}/>
         <Stack.Screen name="Kutu" component={BoxScreen}/>
         <Stack.Screen name="Renk" component={ColorChangeScreen}/>
+        <Stack.Screen name="Sifre" component={PasswordScreen}/>
       </Stack.Navigator>  
    </NavigationContainer>
  
