@@ -34,6 +34,10 @@ export default function HomeScreen({ navigation }) {
         title="DESIGN EKRANI "
         onPress={() => navigation.navigate("Design")}
       />
+       <Button
+        title="POSITION UYGULAMASI EKRANI "
+        onPress={() => navigation.navigate("Uygulama")}
+      />
     </View>
   );
 }

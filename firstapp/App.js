@@ -10,6 +10,7 @@ import BoxScreen from './src/screens/BoxScreen';
 import ColorChangeScreen from './src/screens/ColorChangeScreen.js';
 import PasswordScreen from './src/screens/PasswordScreen.js';
 import DesignScreen from './src/screens/DesignScreen.js';
+import PositionAbsolute from './src/screens/PositionAbsolute.js';
 
 
 const Stack= createNativeStackNavigator();
@@ -25,6 +26,7 @@ export default function App() {
         <Stack.Screen name="Renk" component={ColorChangeScreen}/>
         <Stack.Screen name="Sifre" component={PasswordScreen}/>
         <Stack.Screen name="Design" component={DesignScreen}/>
+        <Stack.Screen name="Uygulama" component={PositionAbsolute}/>
       </Stack.Navigator>  
    </NavigationContainer>
  
