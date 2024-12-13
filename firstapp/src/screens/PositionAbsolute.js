@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-
+//position absolute uygulaması 4 farklı renkteki kutuları 4 köseye yerleştirme uygulaması
 export default function PositionAbsolute() {
   return (
     <View style={{ width: '100%', height: '100%' }}>
