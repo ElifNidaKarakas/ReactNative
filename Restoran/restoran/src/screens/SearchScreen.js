@@ -5,7 +5,7 @@ import useResults from "../../hooks/useResults";
 import ResultsList from "../../component/ResultList";
 
 export default function SearchScreen() {
-  const [searchApi, results] = useResults();
+  const [searchApi, results, errorMessage] = useResults();
   const [term, setTerm] = useState(null);
   console.log(results); //ekrana bastırır
 
@@ -23,18 +23,31 @@ export default function SearchScreen() {
         onTermChange={setTerm}
         onTermSubmit={() => searchApi(term)}
       />
-      <ResultsList
-        title="Ucuz Restoranlar"
-        results={filterResultsByPrice("₺")} //price bilgisi ₺ ile alıyor
-      />
-      <ResultsList
-        title="Uygun Restoranlar"
-        results={filterResultsByPrice("₺₺")}
-      />
-      <ResultsList
-        title="Pahalı Restoranlar"
-        results={filterResultsByPrice("₺₺₺")}
-      />
+      {errorMessage ? (
+        <Text>{errorMessage}</Text>
+      ) : (
+        <>
+          {results.length == 0 ? (
+            <></>
+          ) : (
+            <>
+              {" "}
+              <ResultsList
+                title="Ucuz Restoranlar"
+                results={filterResultsByPrice("₺")} //price bilgisi ₺ ile alıyor
+              />
+              <ResultsList
+                title="Uygun Restoranlar"
+                results={filterResultsByPrice("₺₺")}
+              />
+              <ResultsList
+                title="Pahalı Restoranlar"
+                results={filterResultsByPrice("₺₺₺")}
+              />
+            </>
+          )}
+        </>
+      )}
     </View>
   );
 }

@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   icon:{
-    alignSelf: 'center',
+    alignSelf: "center",
+    
   }
 });
