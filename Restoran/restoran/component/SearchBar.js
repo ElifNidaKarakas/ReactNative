@@ -1,8 +1,8 @@
-import { StyleSheet, Text, View, TextInput } from 'react-native';
-import React from 'react';
-import { AntDesign } from '@expo/vector-icons';
+import { StyleSheet, Text, View, TextInput } from "react-native";
+import React from "react";
+import { AntDesign } from "@expo/vector-icons";
 
-export default function SearchBar() {
+export default function SearchBar({ term, onTermChange, onTermSubmit }) {
   return (
     <View style={styles.backgroundStyle}>
       <AntDesign
@@ -13,9 +13,12 @@ export default function SearchBar() {
       />
       <TextInput
         style={styles.inputStyle}
-        placeholder="Ara"  //yazı yazmazsak görünecek text
-        autoCorrect={false}  //yazı önermeyi engeller
+        placeholder="Ara" //yazı yazmazsak görünecek text
+        autoCorrect={false} //yazı önermeyi engeller
         autoCapitalize="none" //büyük harfle başlamayı kapatır
+        value={term}
+        onChangeText={onTermChange}
+        onEndEditing={onTermSubmit} //kelime yazdıktan sonra mesaj yazma sayfasının tamam demek için olan buton
       />
     </View>
   );
@@ -23,12 +26,12 @@ export default function SearchBar() {
 
 const styles = StyleSheet.create({
   backgroundStyle: {
-    backgroundColor: 'lightgray', //arama çubuğu rengi 
-    flexDirection: 'row',   //icon ile yazı yan yana gelir
+    backgroundColor: "lightgray", //arama çubuğu rengi
+    flexDirection: "row", //icon ile yazı yan yana gelir
     margin: 10,
     height: 50,
-    alignItems: 'center', 
-    borderRadius: 20,  
+    alignItems: "center",
+    borderRadius: 20,
   },
   iconStyle: {
     marginHorizontal: 15, //sağdan ve soldan açar arama çubuğunu
